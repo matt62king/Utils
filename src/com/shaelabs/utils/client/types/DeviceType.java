@@ -1,4 +1,4 @@
-package com.kingunv.utils.client.types;
+package com.shaelabs.utils.client.types;
 
 /**
  * Types of devices
