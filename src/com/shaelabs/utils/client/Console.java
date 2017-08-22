@@ -1,4 +1,4 @@
-package com.kingunv.utils.client;
+package com.shaelabs.utils.client;
 
 /**
  * Methods for logging to the browser console
