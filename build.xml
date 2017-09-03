@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project name="GWT Utilities" default="dist">
+   <property file="build.properties"/>
+   <property name="gwt.home" value="${env.GWT_HOME}"/>
+   
+   <path id="library.gwt-user.classpath">
+    	<pathelement location="${gwt.home}/gwt-user.jar"/>
+   </path>
+   
+   <path id="library.gwt-user.classpath">
+    	<pathelement location="${gwt.home}/gwt-user.jar"/>
+   </path>
+   
+   <path id="library.gwt-dev.classpath">
+   		<fileset dir="${gwt.home}" includes="gwt-dev*.jar"/>
+   </path>
+   
+   <path id="master-classpath">
+       <path refid="library.gwt-user.classpath" />
+       <path refid="library.gwt-dev.classpath" />
+       
+   		<!-- <fileset dir="${web.dir}/WEB-INF/lib">
+      		<include name="*.jar"/>
+   		</fileset> -->
+   		
+   		<pathelement path="${build.dir}"/>
+   </path>
+   
+   <target name="start">
+      <echo>GWT Utilities ${build.version} -- Shae Labs</echo>
+   </target>
+   
+   <target name="compile" depends="start, clean">
+       <echo>Compliling Source</echo>
+       <mkdir dir="${build.source.dir}"/>
+       
+       <javac destdir="${build.source.dir}" source="1.7" target="1.7" debug="true"
+      		deprecation="false" optimize="false" failonerror="true">
+      		<src path="${src.dir}"/>
+      		<classpath refid="master-classpath"/>
+   	   </javac>
+   	   
+       <copy todir="${build.source.dir}">
+      		<fileset dir="${src.dir}">
+        		<include name="com/shaelabs/utils/Utils.gwt.xml" />
+      		</fileset>
+   	   </copy>
+   	  
+       	<!-- Also include client and guiceapi .java files in the output, for GWT -->
+    	<copy todir="${build.source.dir}">
+      		<fileset dir="${src.dir}">
+        		<include name="com/shaelabs/utils/client/**/*.java" />
+        		<include name="om/shaelabs/utils/server/**/*.java" />
+        		<include name="om/shaelabs/utils/shared/**/*.java" />
+      		</fileset>
+    	</copy>
+   </target>
+   
+   <target name="jar">
+       <echo>Building Jar</echo>
+       <mkdir dir="${build.dir}/lib" />
+   
+       <jar destfile="${build.dir}/lib/shaelabs-utils-${build.version}.jar">
+           <fileset dir="${build.source.dir}" />
+       </jar>
+   </target>
+   
+   <target name="clean" description="Clean build directories">
+      <delete dir="${build.dir}" />
+   </target>
+   
+   <target name="dist" depends="compile, jar" />
+   
+</project>
