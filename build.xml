@@ -18,12 +18,7 @@
    <path id="master-classpath">
        <path refid="library.gwt-user.classpath" />
        <path refid="library.gwt-dev.classpath" />
-       
-   		<!-- <fileset dir="${web.dir}/WEB-INF/lib">
-      		<include name="*.jar"/>
-   		</fileset> -->
-   		
-   		<pathelement path="${build.dir}"/>
+   	<pathelement path="${build.dir}"/>
    </path>
    
    <target name="start">
@@ -40,13 +35,14 @@
       		<classpath refid="master-classpath"/>
    	   </javac>
    	   
+       <!-- Include Modules for GWT -->
        <copy todir="${build.source.dir}">
       		<fileset dir="${src.dir}">
         		<include name="com/shaelabs/utils/Utils.gwt.xml" />
       		</fileset>
    	   </copy>
    	  
-       	<!-- Also include client and guiceapi .java files in the output, for GWT -->
+       	<!-- Include .java for GWT -->
     	<copy todir="${build.source.dir}">
       		<fileset dir="${src.dir}">
         		<include name="com/shaelabs/utils/client/**/*.java" />
@@ -58,7 +54,7 @@
    
    <target name="jar">
        <echo>Building Jar</echo>
-       <mkdir dir="${build.dir}/lib" />
+       <mkdir dir="${build.lib.dir}" />
    
        <jar destfile="${build.dir}/lib/shaelabs-utils-${build.version}.jar">
            <fileset dir="${build.source.dir}" />
