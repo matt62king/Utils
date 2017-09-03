@@ -1,7 +1,7 @@
-package com.kingunv.utils.client;
+package com.shaelabs.utils.client;
 
 import com.google.gwt.user.client.Window;
-import com.kingunv.utils.client.types.DeviceType;
+import com.shaelabs.utils.client.types.DeviceType;
 
 /**
  * Methods for accessing device types

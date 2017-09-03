@@ -1,4 +1,4 @@
-package com.kingunv.utils.shared.service.response;
+package com.shaelabs.utils.shared.service.response;
 
 import java.io.Serializable;
 
