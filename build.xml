@@ -38,16 +38,16 @@
        <!-- Include Modules for GWT -->
        <copy todir="${build.source.dir}">
       		<fileset dir="${src.dir}">
-        		<include name="com/shaelabs/utils/Utils.gwt.xml" />
+        		<include name="${path.base}/Utils.gwt.xml" />
       		</fileset>
    	   </copy>
    	  
        	<!-- Include .java for GWT -->
     	<copy todir="${build.source.dir}">
       		<fileset dir="${src.dir}">
-        		<include name="com/shaelabs/utils/client/**/*.java" />
-        		<include name="om/shaelabs/utils/server/**/*.java" />
-        		<include name="om/shaelabs/utils/shared/**/*.java" />
+        		<include name="${path.base}/client/**/*.java" />
+        		<include name="${path.base}/server/**/*.java" />
+        		<include name="${path.base}/shared/**/*.java" />
       		</fileset>
     	</copy>
    </target>
