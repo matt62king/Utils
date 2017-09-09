@@ -11,6 +11,6 @@ import java.lang.annotation.Target;
  * @since
  */
 @Documented @Target(ElementType.FIELD) @Retention(RetentionPolicy.RUNTIME)
-public @interface BeanField {
-	public String object() default "String";
+public @interface Ignore {
+
 }

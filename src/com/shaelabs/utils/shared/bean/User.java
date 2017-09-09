@@ -180,7 +180,10 @@ public class User implements Serializable {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Key: " + key + "\n");
-		sb.append("E-mail: " + email);
+		sb.append("E-mail: " + email + "\n");
+		sb.append("Password: " + password + "\n");
+		sb.append("First Name: " + firstName + "\n");
+		sb.append("Last Name: " + lastName + "\n");
 		
 		return sb.toString();
 	} // End toString()

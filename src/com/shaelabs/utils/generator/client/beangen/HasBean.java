@@ -7,4 +7,5 @@ package com.shaelabs.utils.generator.client.beangen;
 public interface HasBean<BEAN, EDITOR extends BeanEditor> {
 	public void bind(EDITOR editor);
 	public void setBean(BEAN bean);
+	public BEAN getBean();
 }
