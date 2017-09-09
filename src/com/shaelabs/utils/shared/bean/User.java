@@ -27,7 +27,7 @@ public class User implements Serializable {
 	private String firstName;
 	private String lastName;
 	private Date joinDate;
-	private boolean verified;
+	private Boolean verified;
 	
 	public User() {}
 	
@@ -118,7 +118,7 @@ public class User implements Serializable {
 	 * @since
 	 * @category Getters
 	 */
-	public boolean isVerified() {
+	public Boolean getVerified() {
 		return verified;
 	}
 	/**
@@ -128,7 +128,7 @@ public class User implements Serializable {
 	 * @since
 	 * @category Setters
 	 */
-	public void setVerified(boolean verified) {
+	public void setVerified(Boolean verified) {
 		this.verified = verified;
 	}
 
@@ -184,6 +184,8 @@ public class User implements Serializable {
 		sb.append("Password: " + password + "\n");
 		sb.append("First Name: " + firstName + "\n");
 		sb.append("Last Name: " + lastName + "\n");
+		sb.append("Join Date: " + joinDate.toString() + "\n");
+		sb.append("Verified: " + verified.toString() + "\n");
 		
 		return sb.toString();
 	} // End toString()

@@ -10,6 +10,7 @@ import com.google.gwt.core.ext.typeinfo.JParameter;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.rebind.IndentedWriter;
 import com.shaelabs.utils.generator.client.BaseGenerator;
+import com.shaelabs.utils.generator.client.annotation.BeanField;
 import com.shaelabs.utils.generator.client.annotation.Ignore;
 
 /**
@@ -113,7 +114,12 @@ public class BeanGenerator extends BaseGenerator {
 		List<JField> fields = new ArrayList<>();
 		
 		for (JField field : enclosingType.getFields()) {
-			if (field.isAnnotationPresent(UiField.class) && !field.isAnnotationPresent(Ignore.class)) {
+			// Skip over fields annotated with ignore
+			if (field.isAnnotationPresent(Ignore.class)) {
+				continue;
+			}
+			
+			if (field.isAnnotationPresent(UiField.class) || field.isAnnotationPresent(BeanField.class)) {
 				fields.add(field);
 			}
 		}
