@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.JField;
-import com.google.gwt.core.ext.typeinfo.JMethod;
-import com.google.gwt.core.ext.typeinfo.JParameter;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.rebind.IndentedWriter;
 import com.shaelabs.utils.generator.client.BaseGenerator;
@@ -29,7 +27,6 @@ public class BeanGenerator extends BaseGenerator {
 		writeClassIntro(interfaceType, implName, writer);
 		writeFields(writer, interfaceType);
 		writeInterfaceMethods(writer, interfaceType);
-		//writeGettersAndSetters(writer, interfaceType);
 		writeOutro(writer);	
 	}
 	
