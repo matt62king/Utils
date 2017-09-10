@@ -39,6 +39,7 @@
        <copy todir="${build.source.dir}">
       		<fileset dir="${src.dir}">
         		<include name="${path.base}/Utils.gwt.xml" />
+        		<include name="${path.exception.base}/Exception.gwt.xml" />
         		<include name="${path.generator.base}/Generator.gwt.xml" />
       		</fileset>
    	   </copy>
@@ -49,6 +50,7 @@
         		<include name="${path.base}/client/**/*.java" />
         		<include name="${path.base}/server/**/*.java" />
         		<include name="${path.base}/shared/**/*.java" />
+        		<include name="${path.exception.base}/client/**/*.java" />
         		<include name="${path.generator.base}/client/**/*.java" />
       		</fileset>
     	</copy>
