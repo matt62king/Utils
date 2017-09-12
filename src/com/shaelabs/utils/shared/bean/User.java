@@ -184,8 +184,8 @@ public class User implements Serializable {
 		sb.append("Password: " + password + "\n");
 		sb.append("First Name: " + firstName + "\n");
 		sb.append("Last Name: " + lastName + "\n");
-		sb.append("Join Date: " + joinDate.toString() + "\n");
-		sb.append("Verified: " + verified.toString() + "\n");
+		sb.append("Join Date: " + ((joinDate == null) ? "Undefined" : joinDate.toString())).append("\n");
+		sb.append("Verified: " + ((verified == null) ? "Undefined" : verified.toString())).append("\n");
 		
 		return sb.toString();
 	} // End toString()
