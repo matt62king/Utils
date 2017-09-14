@@ -6,7 +6,7 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  * @author Matt
  * @since
  */
-public class DuplicateEmailException extends Exception implements IsSerializable {
+public class DuplicateEmailException extends Exception implements IsSerializable, ExceptionProxy {
 
 	private static final long serialVersionUID = 1L;
 	

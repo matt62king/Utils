@@ -2,6 +2,8 @@ package com.shaelabs.utils.shared.service.response;
 
 import java.io.Serializable;
 
+import com.shaelabs.utils.exception.client.ExceptionProxy;
+
 
 /**
  * @author Matt
